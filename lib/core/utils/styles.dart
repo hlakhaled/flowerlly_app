@@ -56,7 +56,7 @@ class Styles {
       fontSize: 26,
       color: const Color(0xff198155),
       fontWeight: FontWeight.bold);
-  TextStyle textStyle50 = GoogleFonts.merriweather(
+  TextStyle textStyle50 = GoogleFonts.pacifico(
       fontSize: 50,
       color: const Color(0xff198155),
       fontWeight: FontWeight.w400);
