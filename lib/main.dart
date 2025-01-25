@@ -1,3 +1,5 @@
+import 'package:flowerlly_app/features/regesteration/presentation/login_screen.dart';
+import 'package:flowerlly_app/features/regesteration/presentation/signup_screen.dart';
 import 'package:flowerlly_app/features/splash_screen/presentation/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -10,9 +12,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: SplashScreen(),
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      routes: {
+        SignupScreen.id: (context) => const SignupScreen(),
+        LoginScreen.id: (context) => const LoginScreen(),
+        SplashScreen.id: (context) => const SplashScreen(),
+      },
+      initialRoute: SplashScreen.id,
     );
   }
 }
