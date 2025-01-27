@@ -73,7 +73,7 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           SizedBox(height: AppSize.height(context) * .06),
-                          Text("Sign Up", style: Styles().textStyle26),
+                          Text("Sign Up", style: Styles.textStyle26),
                           SizedBox(height: AppSize.height(context) * .05),
                           CustomTextField(
                             text: "First Name",
@@ -112,7 +112,7 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                             children: [
                               Text(
                                 "Already have account ? ",
-                                style: Styles().textStyle12.copyWith(
+                                style: Styles.textStyle12.copyWith(
                                       color: AllColors.kGreenColor,
                                     ),
                               ),
@@ -122,7 +122,7 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                                 },
                                 child: Text(
                                   "Log in",
-                                  style: Styles().textStyle12.copyWith(
+                                  style: Styles.textStyle12.copyWith(
                                         color: AllColors.kGreenColor,
                                         fontWeight: FontWeight.bold,
                                         decoration: TextDecoration.underline,

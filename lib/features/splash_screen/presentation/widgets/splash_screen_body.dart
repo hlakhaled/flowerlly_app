@@ -16,7 +16,7 @@ class SplashScreenBody extends StatelessWidget {
       child: AnimatedSplashScreen(
         splash: Text(
           "Flowerfly!",
-          style: Styles().textStyle50,
+          style: Styles.textStyle50,
         ),
         nextScreen: const LoginScreen(),
         backgroundColor: Colors.transparent,

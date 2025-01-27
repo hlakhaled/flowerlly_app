@@ -19,7 +19,7 @@ class LoginScreenBody extends StatelessWidget {
           Center(
             child: Text(
               "Flowerfly",
-              style: Styles().textStyle36,
+              style: Styles.textStyle36,
             ),
           ),
           SizedBox(

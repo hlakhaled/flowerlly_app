@@ -1,30 +1,27 @@
 import 'package:flowerlly_app/constants/all_colors.dart';
+import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class CustomTextField extends StatelessWidget {
-  const CustomTextField({
-    super.key,
-    required this.text,
-    required this.controller,
-  });
+class CustomSearchTextField extends StatelessWidget {
+  const CustomSearchTextField({super.key});
 
-  final String text;
-  final TextEditingController? controller;
+  // final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       cursorColor: AllColors.kGreenColor,
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return "Required";
-        }
-        return null;
-      },
-      controller: controller,
+      // controller: controller,
       decoration: InputDecoration(
-        hintText: text,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.all(14),
+          child: SvgPicture.asset(
+            Assets.assetsImagesSearch,
+          ),
+        ),
+        hintText: "Search",
         hintStyle: Styles.textStyle16Inter,
         enabledBorder: outlineInputBorder(),
         border: outlineInputBorder(),

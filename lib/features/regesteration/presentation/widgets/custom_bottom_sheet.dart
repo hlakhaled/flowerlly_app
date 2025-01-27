@@ -65,7 +65,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     SizedBox(height: AppSize.height(context) * .06),
-                    Text("Log in", style: Styles().textStyle26),
+                    Text("Log in", style: Styles.textStyle26),
                     SizedBox(height: AppSize.height(context) * .05),
                     CustomTextField(
                       text: "Email Address",
@@ -89,7 +89,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                       children: [
                         Text(
                           "Don’t have an account ? ",
-                          style: Styles().textStyle12.copyWith(
+                          style: Styles.textStyle12.copyWith(
                                 color: AllColors.kGreenColor,
                               ),
                         ),
@@ -99,7 +99,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                           },
                           child: Text(
                             "Sign up",
-                            style: Styles().textStyle12.copyWith(
+                            style: Styles.textStyle12.copyWith(
                                   color: AllColors.kGreenColor,
                                   fontWeight: FontWeight.bold,
                                   decoration: TextDecoration.underline,
