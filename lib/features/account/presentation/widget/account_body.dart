@@ -38,14 +38,14 @@ class AccountBody extends StatelessWidget {
                   left: AppSize.height(context) * .13,
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(40),
-                    child: Container(
-                      decoration: const BoxDecoration(
-border: outli
-                      ),
-                      // color: AllColors.kGrey2Color,
-                      height: 40,
-                      width: 40,
-                    ),
+//                     child: Container(
+//                       decoration: const BoxDecoration(
+// border: outli
+//                       ),
+//                       // color: AllColors.kGrey2Color,
+//                       height: 40,
+//                       width: 40,
+//                     ),
                   ),
                 ),
               ]),
