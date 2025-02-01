@@ -1,4 +1,3 @@
-
 import 'package:flowerlly_app/features/home/presentation/widgets/item_in_grid_view.dart';
 import 'package:flutter/material.dart';
 
@@ -17,12 +16,11 @@ class CustomGridView extends StatelessWidget {
         itemCount: 10,
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2,
-          mainAxisSpacing: 24,
-          crossAxisSpacing: 30,
+          mainAxisSpacing: 14,
+          crossAxisSpacing: 14,
         ),
         itemBuilder: (context, index) => const ItemInGridView(),
       ),
     );
   }
 }
-

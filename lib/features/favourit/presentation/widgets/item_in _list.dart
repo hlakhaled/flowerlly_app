@@ -1,18 +1,16 @@
+// ignore: file_names
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/assets.dart';
-import 'package:flowerlly_app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-class ItemInGridView extends StatefulWidget {
-  const ItemInGridView({
-    super.key,
-  });
+class ItemInList extends StatefulWidget {
+  const ItemInList({super.key});
 
   @override
-  State<ItemInGridView> createState() => _ItemInGridViewState();
+  State<ItemInList> createState() => _ItemInListState();
 }
 
-class _ItemInGridViewState extends State<ItemInGridView> {
+class _ItemInListState extends State<ItemInList> {
   bool isPressed = false;
 
   @override
@@ -32,13 +30,10 @@ class _ItemInGridViewState extends State<ItemInGridView> {
                 });
               },
               icon: isFaverouit()),
-          Center(child: Image.asset(Assets.assetsImagesRosesss)),
-          Center(
-            child: Text(
-              "101 red roses",
-              style: Styles.textStyle12.copyWith(fontWeight: FontWeight.bold),
-            ),
-          )
+          Padding(
+            padding: const EdgeInsets.only(left: 28, right: 28, bottom: 18),
+            child: Image.asset(Assets.assetsImagesRosesss),
+          ),
         ],
       ),
     );

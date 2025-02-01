@@ -10,4 +10,5 @@ class AllColors {
   static const Color kWhiteColor = Colors.white;
   static const Color kBackgroundColor = Color(0xffFAFAFA);
   static const Color kBlackColor = Colors.black;
+  static const Color kGrey2Color = Color(0xffD6D5D5);
 }
