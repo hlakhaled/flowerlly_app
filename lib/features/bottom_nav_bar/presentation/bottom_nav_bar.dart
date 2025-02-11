@@ -4,6 +4,7 @@ import 'package:flowerlly_app/core/utils/styles.dart';
 import 'package:flowerlly_app/features/account/presentation/account_screen.dart';
 import 'package:flowerlly_app/features/favourit/presentation/favourit_screen.dart';
 import 'package:flowerlly_app/features/home/presentation/home_screen.dart';
+import 'package:flowerlly_app/features/status/presentation/status_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -21,7 +22,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> pages = [
     const HomeScreen(),
     const FavouritScreen(),
-    const Text("Status Page"),
+    const StatusScreen(),
     const AccountScreen(),
   ];
 

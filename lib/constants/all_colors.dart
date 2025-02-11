@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class AllColors {
   static const Color kOutlineColor = Color(0xff6A6868);
   static const Color kGreenColor = Color(0xff198155);
+    static const Color kDataColor = Color(0xff818181);
   static const Color kLightGreenColor = Color(0xffDAEFDE);
   static const Color kButtonColor = Color(0xff23C16B);
   static const Color kGreyColor = Color(0xff72777A);
