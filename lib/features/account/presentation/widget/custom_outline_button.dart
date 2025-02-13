@@ -1,5 +1,3 @@
-// ignore_for_file: deprecated_member_use
-
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/app_size.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
@@ -32,13 +30,14 @@ class CustomOutlineButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SvgPicture.asset(
-                items[num]["icon"],
-                color: AllColors.kOutlineColor,
+                items[num]["icon"], width: 18,
+                // ignore: deprecated_member_use
+                color: AllColors.kGreenColor,
               ),
               SizedBox(width: AppSize.width(context) * .03),
               Text(items[num]["text"],
-                  style: Styles.textStyle19.copyWith(
-                      color: AllColors.kOutlineColor,
+                  style: Styles.textStyle20.copyWith(
+                      color: AllColors.kGreenColor,
                       fontWeight: FontWeight.w600)),
             ],
           ),
