@@ -77,9 +77,9 @@ class _AddMoreContainerState extends State<AddMoreContainer> {
     return showDialog(
         context: context,
         builder: (context) => Dialog(
-              surfaceTintColor: AllColors.kGreenColor,
+              surfaceTintColor: AllColors.kContainerColor,
               shadowColor: AllColors.kGreenColor,
-              backgroundColor: AllColors.kLightGreenColor,
+              backgroundColor: AllColors.kContainerColor,
               child: SizedBox(
                 width: AppSize.width(context) * .99,
                 height: AppSize.height(context) * .6,
@@ -96,7 +96,7 @@ class _AddMoreContainerState extends State<AddMoreContainer> {
                         Text(
                           "Title",
                           style: Styles.textStyle18
-                              .copyWith(fontWeight: FontWeight.bold),
+                              .copyWith(fontWeight: FontWeight.w400),
                         ),
                         SizedBox(height: AppSize.height(context) * .01),
                         CustomTextFieldForDialog(
@@ -107,7 +107,7 @@ class _AddMoreContainerState extends State<AddMoreContainer> {
                         Text(
                           "Description",
                           style: Styles.textStyle18
-                              .copyWith(fontWeight: FontWeight.bold),
+                              .copyWith(fontWeight: FontWeight.w400),
                         ),
                         SizedBox(height: AppSize.height(context) * .01),
                         CustomTextFieldForDialog(
