@@ -1,8 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/app_size.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/custom_button.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/custom_text_field.dart';
+import 'package:flowerlly_app/core/utils/functions/login.dart';
+import 'package:flowerlly_app/core/utils/functions/shared_preference_func.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
+import 'package:flowerlly_app/features/bottom_nav_bar/presentation/bottom_nav_bar.dart';
+
 import 'package:flowerlly_app/features/regesteration/presentation/signup_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +23,7 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _email;
   late TextEditingController _password;
-
+  CollectionReference user = FirebaseFirestore.instance.collection("Users");
   @override
   void initState() {
     _email = TextEditingController();
@@ -36,6 +41,19 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
     _email.dispose();
     _password.dispose();
     super.dispose();
+  }
+
+  Future<void> loadName() async {
+    String id = await SharedPreferenceFunc.getId();
+
+    DocumentSnapshot<Object?> snapshot = await user.doc(id).get();
+    if (snapshot.exists) {
+      Map<String, dynamic>? data = snapshot.data() as Map<String, dynamic>?;
+
+      String name = data?['Name'] ?? '...';
+      await SharedPreferenceFunc.setName(name);
+      await SharedPreferenceFunc.set(true);
+    }
   }
 
   @override
@@ -79,8 +97,18 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                     SizedBox(height: AppSize.height(context) * .09),
                     CustomButton(
                       text: "Log in",
-                      onPressed: () {
-                        if (_formKey.currentState!.validate()) {}
+                      onPressed: () async {
+                        if (_formKey.currentState!.validate()) {
+                          await login(
+                              emailAddress: _email.text,
+                              password: _password.text,
+                              context: context);
+                          loadName();
+                          Navigator.popAndPushNamed(
+                            context,
+                            BottomNavBar.id,
+                          );
+                        }
                       },
                     ),
                     SizedBox(height: AppSize.height(context) * .03),
@@ -90,8 +118,8 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                         Text(
                           "Don’t have an account ? ",
                           style: Styles.textStyle12.copyWith(
-                                color: AllColors.kGreenColor,
-                              ),
+                            color: AllColors.kGreenColor,
+                          ),
                         ),
                         GestureDetector(
                           onTap: () {
@@ -100,11 +128,11 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                           child: Text(
                             "Sign up",
                             style: Styles.textStyle12.copyWith(
-                                  color: AllColors.kGreenColor,
-                                  fontWeight: FontWeight.bold,
-                                  decoration: TextDecoration.underline,
-                                  decorationColor: AllColors.kGreenColor,
-                                ),
+                              color: AllColors.kGreenColor,
+                              fontWeight: FontWeight.bold,
+                              decoration: TextDecoration.underline,
+                              decorationColor: AllColors.kGreenColor,
+                            ),
                           ),
                         ),
                       ],

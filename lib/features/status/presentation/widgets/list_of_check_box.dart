@@ -2,8 +2,8 @@ import 'package:flowerlly_app/features/status/presentation/widgets/items_in_list
 import 'package:flutter/material.dart';
 
 class ListOfCheckBox extends StatelessWidget {
-  const ListOfCheckBox({super.key});
-
+  const ListOfCheckBox({super.key,this.isClose=false});
+  final bool isClose;
   final List<String> items = const [
     "Item 1",
     "Item 2",
@@ -20,8 +20,11 @@ class ListOfCheckBox extends StatelessWidget {
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemCount: items.length,
-          itemBuilder: (context, index) =>
-              ItemsInList(index: index, items: items)),
+          itemBuilder: (context, index) => ItemsInList(
+                index: index,
+                items: items,
+                isClose: isClose,
+              )),
     );
   }
 }

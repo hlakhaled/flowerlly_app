@@ -2,8 +2,13 @@ import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/app_size.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/custom_button.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/custom_text_field.dart';
+import 'package:flowerlly_app/core/utils/functions/shared_preference_func.dart';
+
+import 'package:flowerlly_app/core/utils/functions/signup.dart';
+import 'package:flowerlly_app/core/utils/functions/snack_bar.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
-import 'package:flowerlly_app/features/regesteration/presentation/signup_screen.dart';
+import 'package:flowerlly_app/features/regesteration/data/models/user_auth.dart';
+
 import 'package:flutter/material.dart';
 
 class SignUpCustomBottomSheet extends StatefulWidget {
@@ -16,12 +21,14 @@ class SignUpCustomBottomSheet extends StatefulWidget {
 
 class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
   double _position = 1.0;
+
   final _formKey = GlobalKey<FormState>();
   late TextEditingController _email;
   late TextEditingController _password;
   late TextEditingController _firstName;
   late TextEditingController _lastName;
   late TextEditingController _confirmPassword;
+  late UserAuth _userAuth;
   @override
   void initState() {
     _email = TextEditingController();
@@ -29,6 +36,7 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
     _lastName = TextEditingController();
     _firstName = TextEditingController();
     _confirmPassword = TextEditingController();
+
     super.initState();
     Future.delayed(const Duration(milliseconds: 100), () {
       setState(() {
@@ -102,8 +110,28 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                           SizedBox(height: AppSize.height(context) * .05),
                           CustomButton(
                             text: "Sign Up",
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {}
+                            onPressed: () async {
+                              if (_formKey.currentState!.validate()) {
+                                _userAuth = UserAuth(
+                                    email: _email.text,
+                                    password: _password.text,
+                                    fullName:
+                                        "${_firstName.text} ${_lastName.text}");
+
+                                _password.text != _confirmPassword.text
+                                    ? showInSnackBar(
+                                        "Please ensure your password matches the confirmation.",
+                                        context)
+                                    : {
+                                        signup(
+                                          user: _userAuth,
+                                          context: context,
+                                        ),
+                                        SharedPreferenceFunc.setName(
+                                            "${_firstName.text} ${_lastName.text}"),
+                                        SharedPreferenceFunc.set(true),
+                                      };
+                              }
                             },
                           ),
                           SizedBox(height: AppSize.height(context) * .03),
@@ -113,8 +141,8 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                               Text(
                                 "Already have account ? ",
                                 style: Styles.textStyle12.copyWith(
-                                      color: AllColors.kGreenColor,
-                                    ),
+                                  color: AllColors.kGreenColor,
+                                ),
                               ),
                               GestureDetector(
                                 onTap: () {
@@ -123,11 +151,11 @@ class _SignUpCustomBottomSheetState extends State<SignUpCustomBottomSheet> {
                                 child: Text(
                                   "Log in",
                                   style: Styles.textStyle12.copyWith(
-                                        color: AllColors.kGreenColor,
-                                        fontWeight: FontWeight.bold,
-                                        decoration: TextDecoration.underline,
-                                        decorationColor: AllColors.kGreenColor,
-                                      ),
+                                    color: AllColors.kGreenColor,
+                                    fontWeight: FontWeight.bold,
+                                    decoration: TextDecoration.underline,
+                                    decorationColor: AllColors.kGreenColor,
+                                  ),
                                 ),
                               ),
                             ],

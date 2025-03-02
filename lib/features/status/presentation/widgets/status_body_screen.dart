@@ -49,7 +49,15 @@ class StatusBodyScreen extends StatelessWidget {
         const SliverToBoxAdapter(
           child: AddMoreContainer(),
         ),
-        const SliverToBoxAdapter(child: ListOfCheckBox()),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: AppSize.height(context) * .02,
+          ),
+        ),
+        const SliverToBoxAdapter(
+            child: ListOfCheckBox(
+          isClose: true,
+        )),
       ],
     );
   }

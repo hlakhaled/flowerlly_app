@@ -1,6 +1,8 @@
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/app_size.dart';
+import 'package:flowerlly_app/core/utils/functions/shared_preference_func.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
+import 'package:flowerlly_app/features/regesteration/presentation/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -8,19 +10,29 @@ import '../../../../constants/assets.dart';
 
 class CustomOutlineButton extends StatelessWidget {
   final int num;
-  final List<Map<String, dynamic>> items = const [
-    {"icon": Assets.assetsImagesSignout, "text": "Sign Out"},
-    {"icon": Assets.assetsImagesInfo, "text": "About us"},
-    {"icon": Assets.assetsImagesSetting, "text": "Setting"},
-  ];
-  const CustomOutlineButton({super.key, required this.num});
+
+  CustomOutlineButton({super.key, required this.num});
 
   @override
   Widget build(BuildContext context) {
+    final List<Map<String, dynamic>> items = [
+      {
+        "icon": Assets.assetsImagesSignout,
+        "text": "Sign Out",
+        "func": () {
+          SharedPreferenceFunc.set(false);
+          Navigator.pushNamedAndRemoveUntil(
+              context, LoginScreen.id, (route) => false);
+        }
+      },
+      {"icon": Assets.assetsImagesInfo, "text": "About us", "func": () {}},
+      {"icon": Assets.assetsImagesSetting, "text": "Setting", "func": () {}},
+    ];
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: AppSize.width(context) * .04),
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: items[num]["func"],
         style: OutlinedButton.styleFrom(
           side: const BorderSide(color: AllColors.kLightGreenColor, width: 1),
         ),

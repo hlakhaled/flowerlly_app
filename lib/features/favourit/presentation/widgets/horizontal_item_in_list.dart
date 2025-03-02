@@ -48,7 +48,9 @@ class HorizontalItemInList extends StatelessWidget {
                 SizedBox(
                   height: AppSize.height(context) * .03,
                 ),
-                SvgPicture.asset(Assets.assetsImagesTrash),
+                IconButton(
+                    onPressed: () {},
+                    icon: SvgPicture.asset(Assets.assetsImagesTrash)),
               ],
             )
           ],
