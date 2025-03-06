@@ -3,7 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/routes.dart';
 import 'package:flowerlly_app/core/utils/functions/condition_of_shared_preference.dart';
-
 import 'package:flowerlly_app/firebase_options.dart';
 import 'package:flutter/material.dart';
 

@@ -1,12 +1,12 @@
 import 'package:flowerlly_app/constants/all_colors.dart';
 
-import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
+import 'package:flowerlly_app/features/home/data/models/plant_categorey.dart';
 import 'package:flutter/material.dart';
 
 class CategoryItems extends StatelessWidget {
-  const CategoryItems({super.key, required this.text});
-  final String text;
+  const CategoryItems({super.key, required this.item});
+  final PlantCategorey item;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +20,14 @@ class CategoryItems extends StatelessWidget {
             child: CircleAvatar(
               backgroundColor: AllColors.kLightGreyColor,
               child: Image.asset(
-                Assets.assetsImagesImage,
+                item.image,
                 width: 60,
                 height: 60,
               ),
             ),
           ),
           Text(
-            text,
+            item.title,
             style: Styles.textStyle12.copyWith(fontWeight: FontWeight.bold),
           )
         ],
