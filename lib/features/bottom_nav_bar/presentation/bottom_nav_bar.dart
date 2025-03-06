@@ -50,11 +50,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
           selectedItemColor: AllColors.kPinkColor,
           unselectedItemColor: AllColors.kWhiteColor,
           type: BottomNavigationBarType.fixed,
-
-          // 🌟 Custom Label Styling
           selectedLabelStyle: Styles.textStyle11,
           unselectedLabelStyle: Styles.textStyle11,
-
           items: List.generate(icons.length, (index) {
             bool isSelected = index == currentPageIndex;
             return BottomNavigationBarItem(

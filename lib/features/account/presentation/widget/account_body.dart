@@ -11,7 +11,6 @@ import 'package:flowerlly_app/features/favourit/presentation/widgets/custom_app_
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-
 class AccountBody extends StatefulWidget {
   const AccountBody({super.key});
 
@@ -32,7 +31,6 @@ class _AccountBodyState extends State<AccountBody> {
     String name = await SharedPreferenceFunc.getName();
     setState(() {
       userName = name;
-      print(name);
     });
   }
 
@@ -55,8 +53,8 @@ class _AccountBodyState extends State<AccountBody> {
               ),
             ),
             Positioned(
-              top: AppSize.height(context) * .13,
-              left: AppSize.height(context) * .13,
+              top: 100,
+              left: 100,
               child: Container(
                 height: 40,
                 width: 40,
@@ -68,17 +66,15 @@ class _AccountBodyState extends State<AccountBody> {
                     width: 2.0,
                   ),
                 ),
+                child: Center(
+                  child: SvgPicture.asset(
+                    Assets.assetsImagesPencil,
+                    width: 20,
+                    height: 20,
+                  ),
+                ),
               ),
             ),
-            Positioned(
-              top: AppSize.height(context) * .14,
-              left: AppSize.height(context) * .145,
-              child: SvgPicture.asset(
-                Assets.assetsImagesPencil,
-                width: 20,
-                height: 20,
-              ),
-            )
           ]),
           SizedBox(height: AppSize.height(context) * .02),
           Text(

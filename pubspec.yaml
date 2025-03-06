@@ -36,13 +36,15 @@ dependencies:
   go_router: ^14.7.1
   google_fonts: ^6.2.1
   page_transition: ^2.2.1
-  table_calendar: ^3.2.0
+  table_calendar: ^3.0.9
+
   dotted_line:
   firebase_core: ^3.11.0
   firebase_auth: ^5.4.2
   cloud_firestore: ^5.6.3
   shared_preferences:
   auto_size_text: ^3.0.0
+  device_preview: ^1.2.0
 dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:

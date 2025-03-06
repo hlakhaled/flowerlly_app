@@ -76,6 +76,7 @@ class HomeBody extends StatelessWidget {
           SliverToBoxAdapter(
               child: SizedBox(height: AppSize.height(context) * .01)),
           const SliverToBoxAdapter(
+        
             child: CustomGridView(),
           ),
           SliverToBoxAdapter(

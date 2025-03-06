@@ -89,39 +89,34 @@ class _AddMoreContainerState extends State<AddMoreContainer> {
                     top: AppSize.height(context) * .06,
                     right: AppSize.width(context) * .06,
                   ),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Title",
-                          style: Styles.textStyle18
-                              .copyWith(fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(height: AppSize.height(context) * .01),
-                        CustomTextFieldForDialog(
-                            num: 1,
-                            text: "Order delivered",
-                            controller: _title),
-                        SizedBox(height: AppSize.height(context) * .028),
-                        Text(
-                          "Description",
-                          style: Styles.textStyle18
-                              .copyWith(fontWeight: FontWeight.w400),
-                        ),
-                        SizedBox(height: AppSize.height(context) * .01),
-                        CustomTextFieldForDialog(
-                            num: 4,
-                            text: "Order delivered",
-                            controller: _title),
-                        SizedBox(height: AppSize.height(context) * .03),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: AppSize.width(context) * .12),
-                          child: CustomButton(text: "Save", onPressed: () {}),
-                        )
-                      ],
-                    ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Title",
+                        style: Styles.textStyle18
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(height: AppSize.height(context) * .01),
+                      CustomTextFieldForDialog(
+                          num: 1, text: "Order delivered", controller: _title),
+                      SizedBox(height: AppSize.height(context) * .028),
+                      Text(
+                        "Description",
+                        style: Styles.textStyle18
+                            .copyWith(fontWeight: FontWeight.w400),
+                      ),
+                      SizedBox(height: AppSize.height(context) * .01),
+                      CustomTextFieldForDialog(
+                          num: 4, text: "Order delivered", controller: _title),
+                      const Spacer(),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: AppSize.width(context) * .12),
+                        child: CustomButton(text: "Save", onPressed: () {}),
+                      ),
+                      const Spacer(),
+                    ],
                   ),
                 ),
               ),

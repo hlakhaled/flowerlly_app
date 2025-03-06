@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/core/utils/common_widgets/routes.dart';
@@ -5,16 +6,14 @@ import 'package:flowerlly_app/core/utils/functions/condition_of_shared_preferenc
 
 import 'package:flowerlly_app/firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
-  GoogleFonts.config.allowRuntimeFetching = false;
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(DevicePreview(enabled: false, builder: (context) => const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

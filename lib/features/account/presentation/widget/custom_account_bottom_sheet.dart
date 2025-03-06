@@ -57,12 +57,12 @@ class _CustomAccountBottomSheetState extends State<CustomAccountBottomSheet> {
             child: ListView.builder(
               itemCount: 3,
               itemBuilder: (BuildContext context, int index) {
-                return
-                    // SizedBox(height: AppSize.height(context) * .06),
-                    Column(
+                return Column(
                   children: [
-                    CustomOutlineButton(
-                      num: index,
+                    Center(
+                      child: CustomOutlineButton(
+                        num: index,
+                      ),
                     ),
                     SizedBox(height: AppSize.height(context) * .02),
                   ],

@@ -61,7 +61,7 @@ class _ItemsInListState extends State<ItemsInList> {
                     style: Styles.textStyle18,
                   ),
                   SizedBox(
-                    width: AppSize.width(context) * .4,
+                    width: AppSize.width(context) * .5,
                   ),
                   widget.isClose
                       ? IconButton(
