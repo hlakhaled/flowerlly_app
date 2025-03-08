@@ -1,6 +1,8 @@
+import 'package:flowerlly_app/features/home/domain/entities/plant_entity.dart';
+
 import 'default_image.dart';
 
-class PlantModel {
+class PlantModel extends PlantEntity {
   int? id;
   String? commonName;
   List<String>? scientificName;
@@ -29,7 +31,7 @@ class PlantModel {
     this.speciesEpithet,
     this.genus,
     this.defaultImage,
-  });
+  }) : super(image: defaultImage!.licenseUrl!, title: commonName!, pId: id!);
 
   factory PlantModel.fromJson(Map<String, dynamic> json) => PlantModel(
         id: json['id'] as int?,
