@@ -1,11 +1,10 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-
+  
   /// Assets for assetsFontsMerriweatherRegular
   /// assets/fonts/Merriweather-Regular.ttf
-  static const String assetsFontsMerriweatherRegular =
-      "assets/fonts/Merriweather-Regular.ttf";
+  static const String assetsFontsMerriweatherRegular = "assets/fonts/Merriweather-Regular.ttf";
 
   /// Assets for assetsImagesAttraction
   /// assets/images/attraction.svg
@@ -199,3 +198,4 @@ class Assets {
   /// assets/images/watering.svg
   static const String assetsImagesWatering = "assets/images/watering.svg";
 }
+
