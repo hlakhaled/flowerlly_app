@@ -85,5 +85,4 @@ class DefaultFirebaseOptions {
     storageBucket: 'flowerly-e5b70.firebasestorage.app',
     measurementId: 'G-VNWGG76B24',
   );
-
 }

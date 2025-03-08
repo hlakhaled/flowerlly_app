@@ -38,14 +38,15 @@ class _ItemInGridViewState extends State<ItemInGridView> {
                   });
                 },
                 icon: isFaverouit()),
-
             Center(
                 child: Image.asset(
               Assets.assetsImagesRosesss,
               width: 90,
               height: 90,
             )),
-            const Spacer(),
+            const Spacer(
+              flex: 1,
+            ),
             Center(
               child: Text(
                 "101 red roses",
@@ -54,9 +55,9 @@ class _ItemInGridViewState extends State<ItemInGridView> {
                 style: Styles.textStyle12.copyWith(fontWeight: FontWeight.bold),
               ),
             ),
-            const Spacer(),
-
-            // SizedBox(height: AppSize.height(context) * .01)
+            const Spacer(
+              flex: 4,
+            ),
           ],
         ),
       ),

@@ -1,4 +1,3 @@
-
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flowerlly_app/constants/all_colors.dart';
 import 'package:flowerlly_app/constants/app_size.dart';
@@ -13,8 +12,8 @@ class CustomDottedLine extends StatelessWidget {
   Widget build(BuildContext context) {
     return DottedLine(
       lineLength: AppSize.width(context),
-      lineThickness: 2.0, 
-      dashLength: 6.0, 
+      lineThickness: 2.0,
+      dashLength: 6.0,
       dashColor: AllColors.kGreenColor,
       dashGapLength: 3.0,
     );

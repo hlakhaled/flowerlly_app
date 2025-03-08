@@ -3,5 +3,4 @@ class PlantEntity {
   final String title;
 
   PlantEntity({required this.image, required this.title});
-  
 }

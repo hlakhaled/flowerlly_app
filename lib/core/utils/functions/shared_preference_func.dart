@@ -14,8 +14,8 @@ class SharedPreferenceFunc {
 
   static getName() async {
     final prefs = await SharedPreferences.getInstance();
-    
-   return prefs.getString("name") ?? "";
+
+    return prefs.getString("name") ?? "";
   }
 
   static Future<bool> get() async {
@@ -23,9 +23,9 @@ class SharedPreferenceFunc {
     return prefs.getBool(key) ?? false;
   }
 
-  static  setId(String id) async {
+  static setId(String id) async {
     final prefs = await SharedPreferences.getInstance();
-     prefs.setString("id", id);
+    prefs.setString("id", id);
   }
 
   static Future<String> getId() async {

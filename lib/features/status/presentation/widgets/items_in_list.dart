@@ -64,12 +64,15 @@ class _ItemsInListState extends State<ItemsInList> {
                     width: AppSize.width(context) * .5,
                   ),
                   widget.isClose
-                      ? IconButton(
-                          onPressed: () {},
-                          icon: SvgPicture.asset(
-                            Assets.assetsImagesClose,
-                            width: 14,
-                          ))
+                      ? Padding(
+                          padding: const EdgeInsets.only(right: 5),
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: SvgPicture.asset(
+                                Assets.assetsImagesClose,
+                                width: 14,
+                              )),
+                        )
                       : Container()
                 ],
               ),

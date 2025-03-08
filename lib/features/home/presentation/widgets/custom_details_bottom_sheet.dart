@@ -155,7 +155,7 @@ class _CustomDetatilsBottomSheetState extends State<CustomDetatilsBottomSheet> {
                     thickness: 2,
                   ),
                   SizedBox(height: AppSize.height(context) * .04),
-                   CustomContainerList()
+                  CustomContainerList()
                 ],
               ),
             ),

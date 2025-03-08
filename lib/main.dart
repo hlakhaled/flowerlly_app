@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget {
         }
         return MaterialApp(
             theme: ThemeData(
+              scaffoldBackgroundColor: AllColors.kBackgroundColor,
               checkboxTheme: CheckboxThemeData(
                 shape: const CircleBorder(),
                 side: WidgetStateBorderSide.resolveWith(

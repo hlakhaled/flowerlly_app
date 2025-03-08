@@ -3,6 +3,6 @@ class UserAuth {
   final String password;
   final String fullName;
 
-  UserAuth({required this.email, required this.password, required this.fullName});
-  
+  UserAuth(
+      {required this.email, required this.password, required this.fullName});
 }

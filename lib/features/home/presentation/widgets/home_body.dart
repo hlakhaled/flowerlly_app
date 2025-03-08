@@ -10,7 +10,7 @@ import 'package:flutter_svg/svg.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({super.key});
- 
+
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
@@ -71,7 +71,6 @@ class HomeBody extends StatelessWidget {
           SliverToBoxAdapter(
               child: SizedBox(height: AppSize.height(context) * .01)),
           const SliverToBoxAdapter(
-        
             child: CustomGridView(),
           ),
           SliverToBoxAdapter(

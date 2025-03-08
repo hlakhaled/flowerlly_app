@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> get Routes {
   return {
-      ItemDetails.id: (context) => const ItemDetails(),
+    ItemDetails.id: (context) => const ItemDetails(),
     SignupScreen.id: (context) => const SignupScreen(),
     LoginScreen.id: (context) => const LoginScreen(),
     SplashScreen.id: (context) => const SplashScreen(),

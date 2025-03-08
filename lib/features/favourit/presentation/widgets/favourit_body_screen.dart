@@ -17,15 +17,18 @@ class FavouritBodyScreen extends StatelessWidget {
             height: AppSize.height(context) * .06,
           ),
         ),
-        const SliverToBoxAdapter(child: CustomAppBar(text: "Favoutits",)),
+        const SliverToBoxAdapter(
+            child: CustomAppBar(
+          text: "Favoutits",
+        )),
         SliverToBoxAdapter(
           child: SizedBox(
             height: AppSize.height(context) * .04,
           ),
         ),
-        const SliverToBoxAdapter(
-          child: CustomDottedLine(),
-        ),
+        // const SliverToBoxAdapter(
+        //   child: CustomDottedLine(),
+        // ),
         SliverToBoxAdapter(
           child: SizedBox(
             height: AppSize.height(context) * .04,
