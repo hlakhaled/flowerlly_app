@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 
 class ApiService {
   Dio _dio;
-  final String baseUrl = "";
+  final String baseUrl = "https://perenual.com/api/";
   ApiService(this._dio);
 
   get({required String endPoint}) async {
