@@ -10,7 +10,7 @@ class FetchCategoryOfPlantsUseCase extends UseCases<PlantEntity, NoParm> {
   FetchCategoryOfPlantsUseCase({required this.homeRepos});
 
   @override
-  Future<Either<List<PlantEntity>, Failure>> call([NoParm? p]) {
+  Future<Either<Failure, List<PlantEntity>>>  call([NoParm? p]) {
     return homeRepos.fetchaCategoryOfPlants();
   }
 }

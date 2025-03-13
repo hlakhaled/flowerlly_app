@@ -1,6 +1,6 @@
 import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/features/home/data/models/plant_categorey.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/category_items.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/category_items.dart';
 import 'package:flutter/material.dart';
 
 class HorizonatalListView extends StatelessWidget {

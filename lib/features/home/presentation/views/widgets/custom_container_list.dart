@@ -1,7 +1,7 @@
 import 'package:flowerlly_app/constants/assets.dart';
 
 import 'package:flowerlly_app/features/home/data/models/description_of_plant_model.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_container_item.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_container_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

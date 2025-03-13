@@ -2,7 +2,7 @@ import 'package:flowerlly_app/constants/all_colors.dart';
 
 import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
-import 'package:flowerlly_app/features/home/presentation/item_details.dart';
+import 'package:flowerlly_app/features/home/presentation/views/item_details.dart';
 import 'package:flutter/material.dart';
 
 class ItemInGridView extends StatefulWidget {

@@ -6,8 +6,8 @@ import 'package:flowerlly_app/constants/assets.dart';
 
 import 'package:flowerlly_app/core/utils/functions/shared_preference_func.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_container_item.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_container_list.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_container_item.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_container_list.dart';
 
 import 'package:flutter/material.dart';
 

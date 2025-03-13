@@ -1,4 +1,4 @@
-import 'package:flowerlly_app/features/home/presentation/widgets/item_in_grid_view.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/item_in_grid_view.dart';
 import 'package:flutter/material.dart';
 
 class CustomGridView extends StatelessWidget {

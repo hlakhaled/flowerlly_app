@@ -9,7 +9,7 @@ class FetchPlantUseCase extends UseCases<PlantEntity, NoParm> {
   FetchPlantUseCase({required this.homeRepos});
 
   @override
-  Future<Either<List<PlantEntity>, Failure>> call([NoParm? p]) {
+  Future<Either<Failure, List<PlantEntity>>> call([NoParm? p]) {
     return homeRepos.fetchPlants();
   }
 }

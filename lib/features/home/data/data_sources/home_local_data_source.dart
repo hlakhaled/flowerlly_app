@@ -1,22 +1,22 @@
+import 'package:flowerlly_app/constants/constant.dart';
 import 'package:flowerlly_app/features/home/domain/entities/plant_entity.dart';
+import 'package:hive/hive.dart';
 
 abstract class HomeLocalDataSource {
-    List<PlantEntity> fetchPlants();
-    List<PlantEntity> fetchaCategoryOfPlants();
+  List<PlantEntity> fetchPlants();
+  List<PlantEntity> fetchaCategoryOfPlants();
 }
-class HomeLocalDataSourceImpl extends HomeLocalDataSource
-{
+
+class HomeLocalDataSourceImpl extends HomeLocalDataSource {
   @override
   List<PlantEntity> fetchPlants() {
-    // TODO: implement fetchPlants
-    throw UnimplementedError();
+    var box = Hive.box<PlantEntity>(kPlantBox);
+    return box.values.toList();
   }
 
   @override
   List<PlantEntity> fetchaCategoryOfPlants() {
-    // TODO: implement fetchaCategoryOfPlants
-    throw UnimplementedError();
+    var box = Hive.box<PlantEntity>(kCategoryPlantBox);
+    return box.values.toList();
   }
-
-
 }

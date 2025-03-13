@@ -1,7 +1,7 @@
 import 'package:flowerlly_app/constants/app_size.dart';
 import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/features/favourit/presentation/widgets/custom_app_bar.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_details_bottom_sheet.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_details_bottom_sheet.dart';
 
 import 'package:flutter/material.dart';
 

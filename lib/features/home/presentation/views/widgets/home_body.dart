@@ -1,9 +1,9 @@
 import 'package:flowerlly_app/constants/app_size.dart';
 import 'package:flowerlly_app/constants/assets.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_grid_view.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/custom_search_text_field.dart';
-import 'package:flowerlly_app/features/home/presentation/widgets/horizonatal_list_view.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_grid_view.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/custom_search_text_field.dart';
+import 'package:flowerlly_app/features/home/presentation/views/widgets/horizonatal_list_view.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
