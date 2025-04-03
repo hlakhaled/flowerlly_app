@@ -20,19 +20,22 @@ class PlantEntityAdapter extends TypeAdapter<PlantEntity> {
       image: fields[0] as String,
       title: fields[1] as String,
       pId: fields[2] as int,
+      isFavourit: fields[3] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, PlantEntity obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.image)
       ..writeByte(1)
       ..write(obj.title)
       ..writeByte(2)
-      ..write(obj.pId);
+      ..write(obj.pId)
+      ..writeByte(3)
+      ..write(obj.isFavourit);
   }
 
   @override

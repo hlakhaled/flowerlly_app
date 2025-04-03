@@ -4,7 +4,7 @@ import 'package:flowerlly_app/core/utils/styles.dart';
 import 'package:flowerlly_app/features/account/presentation/account_screen.dart';
 import 'package:flowerlly_app/features/favourit/presentation/favourit_screen.dart';
 import 'package:flowerlly_app/features/home/presentation/views/home_screen.dart';
-import 'package:flowerlly_app/features/status/presentation/status_screen.dart';
+import 'package:flowerlly_app/features/status/presentation/views/status_screen.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

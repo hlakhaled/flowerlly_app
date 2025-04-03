@@ -1,8 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
+
 import 'package:flowerlly_app/core/errors/failure.dart';
-import 'package:flowerlly_app/features/home/data/data_sources/home_local_data_source.dart';
-import 'package:flowerlly_app/features/home/data/data_sources/home_remote_data_source.dart';
+import 'package:flowerlly_app/features/home/data/data_sources/home_data_sources/home_local_data_source.dart';
+import 'package:flowerlly_app/features/home/data/data_sources/home_data_sources/home_remote_data_source.dart';
 import 'package:flowerlly_app/features/home/domain/entities/plant_entity.dart';
 import 'package:flowerlly_app/features/home/domain/repos/home_repos.dart';
 
@@ -13,33 +14,16 @@ class HomeReposImpl extends HomeRepos {
   HomeReposImpl(
       {required this.homeLocalDataSource, required this.homeRemoteDataSource});
   @override
-  Future<Either<Failure, List<PlantEntity>>> fetchPlants() async {
+  Future<Either<Failure, List<PlantEntity>>> fetchPlants(String q) async {
     try {
-      List<PlantEntity> plant = homeLocalDataSource.fetchPlants();
-      if (plant.isNotEmpty) {
-        return right(plant);
+      var plantList = homeLocalDataSource.fetchPlants();
+
+      if (plantList.isNotEmpty) {
+        return right(plantList);
       }
 
-      plant = await homeRemoteDataSource.fetchPlants();
-      return right(plant);
-    } on Exception catch (e) {
-      if (e is DioException) {
-        return left(ServiceFailure.fromDioError(e));
-      } else {
-        return left(ServiceFailure(e.toString()));
-      }
-    }
-  }
+      var plant = await homeRemoteDataSource.fetchPlants(q: q);
 
-  @override
-  Future<Either<Failure, List<PlantEntity>>> fetchaCategoryOfPlants() async {
-    try {
-      List<PlantEntity> plant = homeLocalDataSource.fetchaCategoryOfPlants();
-      if (plant.isNotEmpty) {
-        return right(plant);
-      }
-
-      plant = await homeRemoteDataSource.fetchaCategoryOfPlants();
       return right(plant);
     } on Exception catch (e) {
       if (e is DioException) {

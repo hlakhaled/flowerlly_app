@@ -8,13 +8,17 @@ part 'plant_state.dart';
 class PlantCubit extends Cubit<PlantState> {
   PlantCubit(this.fetchPlantUseCase) : super(PlantInitial());
   FetchPlantUseCase fetchPlantUseCase;
-  Future<void> fetchPlant() async {
+  Future<void> fetchPlant(String q) async {
+    if (state is PlantLoading) return;
     emit(PlantLoading());
-    var result = await fetchPlantUseCase.call();
-    result.fold((failure) {
-      emit(PlantFailure(errorMsg: failure.toString()));
-    }, (plant) {
-      emit(PlantSuccess(plant: plant));
-    });
+
+    final result = await fetchPlantUseCase.call(q);
+
+    result.fold(
+      (failure) => emit(PlantFailure(errorMsg: failure.toString())),
+      (plant) {
+        emit(PlantSuccess(plant: plant));
+      },
+    );
   }
 }

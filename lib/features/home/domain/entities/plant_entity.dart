@@ -1,12 +1,16 @@
 import 'package:hive/hive.dart';
-  part 'plant_entity.g.dart';
+part 'plant_entity.g.dart';
+
 @HiveType(typeId: 0)
 class PlantEntity {
-@HiveField(0)
+  @HiveField(0)
   final String image;
-@HiveField(1)
+  @HiveField(1)
   final String title;
   @HiveField(2)
   final int pId;
-  PlantEntity({required this.image, required this.title,required this.pId});
+  @HiveField(3)
+  bool isFavourit;
+
+  PlantEntity({required this.image, required this.title, required this.pId,required this.isFavourit});
 }

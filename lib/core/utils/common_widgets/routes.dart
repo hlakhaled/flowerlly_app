@@ -5,8 +5,8 @@ import 'package:flowerlly_app/features/home/presentation/views/item_details.dart
 import 'package:flowerlly_app/features/regesteration/presentation/login_screen.dart';
 import 'package:flowerlly_app/features/regesteration/presentation/signup_screen.dart';
 import 'package:flowerlly_app/features/splash_screen/presentation/splash_screen.dart';
-import 'package:flowerlly_app/features/status/presentation/calender_screen.dart';
-import 'package:flowerlly_app/features/status/presentation/status_screen.dart';
+import 'package:flowerlly_app/features/status/presentation/views/calender_screen.dart';
+import 'package:flowerlly_app/features/status/presentation/views/status_screen.dart';
 import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> get Routes {

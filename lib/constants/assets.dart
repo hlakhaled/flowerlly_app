@@ -1,10 +1,11 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for assetsFontsMerriweatherRegular
   /// assets/fonts/Merriweather-Regular.ttf
-  static const String assetsFontsMerriweatherRegular = "assets/fonts/Merriweather-Regular.ttf";
+  static const String assetsFontsMerriweatherRegular =
+      "assets/fonts/Merriweather-Regular.ttf";
 
   /// Assets for assetsImagesAttraction
   /// assets/images/attraction.svg
@@ -126,6 +127,10 @@ class Assets {
   /// assets/images/period.svg
   static const String assetsImagesPeriod = "assets/images/period.svg";
 
+  /// Assets for assetsImagesPlace
+  /// assets/images/place.svg
+  static const String assetsImagesPlace = "assets/images/place.svg";
+
   /// Assets for assetsImagesPlus
   /// assets/images/plus.svg
   static const String assetsImagesPlus = "assets/images/plus.svg";
@@ -190,6 +195,10 @@ class Assets {
   /// assets/images/tree.png
   static const String assetsImagesTree = "assets/images/tree.png";
 
+  /// Assets for assetsImagesType
+  /// assets/images/type.svg
+  static const String assetsImagesType = "assets/images/type.svg";
+
   /// Assets for assetsImagesWater
   /// assets/images/water.svg
   static const String assetsImagesWater = "assets/images/water.svg";
@@ -198,4 +207,3 @@ class Assets {
   /// assets/images/watering.svg
   static const String assetsImagesWatering = "assets/images/watering.svg";
 }
-

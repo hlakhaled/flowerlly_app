@@ -32,7 +32,7 @@ class CustomContainerItem extends StatelessWidget {
               decoration: const BoxDecoration(
                   color: AllColors.kLightGreenColor, shape: BoxShape.circle),
               child: Padding(
-                  padding: EdgeInsets.all(14),
+                  padding: const EdgeInsets.all(14),
                   child: descriptionOfPlantModel.icon),
             ),
             SizedBox(height: AppSize.height(context) * .014),

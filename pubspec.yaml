@@ -33,7 +33,7 @@ dependencies:
   cloud_firestore: ^5.6.3
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
-  device_preview: ^1.2.0
+
   dio: ^5.8.0+1
   dotted_line: null
   firebase_auth: ^5.4.2
@@ -47,6 +47,7 @@ dependencies:
   google_fonts: ^6.2.1
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  intl: ^0.20.2
   page_transition: ^2.2.1
   shared_preferences: null
   table_calendar: ^3.0.9

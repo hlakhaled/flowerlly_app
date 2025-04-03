@@ -5,8 +5,8 @@ import 'default_image.dart';
 class PlantModel extends PlantEntity {
   int? id;
   String? commonName;
-  List<String>? scientificName;
-  List<String>? otherName;
+  List<dynamic>? scientificName;
+  List<dynamic>? otherName;
   dynamic family;
   dynamic hybrid;
   dynamic authority;
@@ -31,13 +31,17 @@ class PlantModel extends PlantEntity {
     this.speciesEpithet,
     this.genus,
     this.defaultImage,
-  }) : super(image: defaultImage!.licenseUrl!, title: commonName!, pId: id!);
+  }) : super(
+            image: defaultImage?.originalUrl! ?? "",
+            isFavourit: false,
+            title: commonName!,
+            pId: id!);
 
   factory PlantModel.fromJson(Map<String, dynamic> json) => PlantModel(
         id: json['id'] as int?,
         commonName: json['common_name'] as String?,
-        scientificName: json['scientific_name'] as List<String>?,
-        otherName: json['other_name'] as List<String>?,
+        scientificName: json['scientific_name'] as List<dynamic>?,
+        otherName: json['other_name'] as List<dynamic>?,
         family: json['family'] as dynamic,
         hybrid: json['hybrid'] as dynamic,
         authority: json['authority'] as dynamic,

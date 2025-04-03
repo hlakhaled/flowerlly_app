@@ -1,6 +1,5 @@
 part of 'plant_cubit.dart';
 
-
 sealed class PlantState {}
 
 final class PlantInitial extends PlantState {}
