@@ -6,7 +6,7 @@ class ItemDetails extends StatelessWidget {
   static String id = "item";
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: SafeArea(child: ItemDetailsBody()),
     );
   }

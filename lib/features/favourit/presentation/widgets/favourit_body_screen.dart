@@ -6,13 +6,13 @@ import 'package:flowerlly_app/features/favourit/presentation/widgets/horizontal_
 import 'package:flowerlly_app/features/home/domain/entities/plant_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 class FavouritBodyScreen extends StatelessWidget {
   const FavouritBodyScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    List<PlantEntity> items = getItems();
     return CustomScrollView(
       physics: const ScrollPhysics(parent: BouncingScrollPhysics()),
       slivers: [
@@ -31,20 +31,22 @@ class FavouritBodyScreen extends StatelessWidget {
           ),
         ),
         SliverToBoxAdapter(
-            child: ListView.builder(
-          physics: const ScrollPhysics(parent: NeverScrollableScrollPhysics()),
-          shrinkWrap: true,
-          itemBuilder: (context, index) =>
-              HorizontalItemInList(item: items[index]),
-          itemCount: items.length,
-        )),
+            child: ValueListenableBuilder(
+                valueListenable:
+                    Hive.box<PlantEntity>(kFavouritPlantBox).listenable(),
+                builder: (context, Box<PlantEntity> box, _) {
+                  final plants = box.values.toList();
+
+                  return ListView.builder(
+                    physics: const ScrollPhysics(
+                        parent: NeverScrollableScrollPhysics()),
+                    shrinkWrap: true,
+                    itemBuilder: (context, index) =>
+                        HorizontalItemInList(item: plants[index], index: index),
+                    itemCount: plants.length,
+                  );
+                }))
       ],
     );
-  }
-
-  List<PlantEntity> getItems() {
-    var plantBox = Hive.box<PlantEntity>(kFavouritPlantBox);
-    var items = plantBox.values.toList();
-    return items;
   }
 }

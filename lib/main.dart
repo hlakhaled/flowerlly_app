@@ -12,6 +12,7 @@ import 'package:flowerlly_app/features/home/domain/use_cases/fetch_plant_details
 import 'package:flowerlly_app/features/home/domain/use_cases/fetch_plant_use_case.dart';
 import 'package:flowerlly_app/features/home/presentation/managers/plant_cubit/plant_cubit.dart';
 import 'package:flowerlly_app/features/home/presentation/managers/plant_details_cubit/plant_details_cubit.dart';
+import 'package:flowerlly_app/features/home/presentation/managers/plant_id_cubit.dart';
 import 'package:flowerlly_app/features/home/presentation/managers/plant_type.dart';
 import 'package:flowerlly_app/features/status/domain/entities/status_entity.dart';
 import 'package:flowerlly_app/features/status/domain/entities/status_list_entity/status_list_entity.dart';
@@ -67,6 +68,9 @@ class MyApp extends StatelessWidget {
         }
         return MultiBlocProvider(
           providers: [
+            BlocProvider<PlantIdCubit>(
+              create: (BuildContext context) => PlantIdCubit(),
+            ),
             BlocProvider<PlantTypeCubit>(
               create: (BuildContext context) => PlantTypeCubit(),
             ),
@@ -75,7 +79,8 @@ class MyApp extends StatelessWidget {
                     PlantDetailsCubit(FetchPlantDetailsUseCase(
                       plantDetailsRepos: getIt.get<PlantDetailsRepos>(),
                     ))
-                      ..fetchPlantDetails("3")),
+                      ..fetchPlantDetails(
+                          context.read<PlantIdCubit>().getId().toString())),
             BlocProvider<PlantCubit>(
                 create: (BuildContext context) => PlantCubit(FetchPlantUseCase(
                       homeRepos: getIt.get<HomeReposImpl>(),

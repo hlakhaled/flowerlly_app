@@ -6,6 +6,6 @@ class StatusScreen extends StatelessWidget {
   static String id = "status";
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: SafeArea(child: StatusBodyScreen()));
+    return const Scaffold(body: SafeArea(child: StatusBodyScreen()));
   }
 }

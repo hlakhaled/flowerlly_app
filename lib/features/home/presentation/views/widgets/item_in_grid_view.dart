@@ -4,6 +4,7 @@ import 'package:flowerlly_app/constants/constant.dart';
 import 'package:flowerlly_app/core/utils/styles.dart';
 import 'package:flowerlly_app/features/home/domain/entities/plant_entity.dart';
 import 'package:flowerlly_app/features/home/presentation/managers/plant_details_cubit/plant_details_cubit.dart';
+import 'package:flowerlly_app/features/home/presentation/managers/plant_id_cubit.dart';
 import 'package:flowerlly_app/features/home/presentation/views/item_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -22,6 +23,7 @@ class _ItemInGridViewState extends State<ItemInGridView> {
   @override
   void initState() {
     isPressed = widget.plantEntity.isFavourit;
+
     super.initState();
   }
 
@@ -29,6 +31,7 @@ class _ItemInGridViewState extends State<ItemInGridView> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        context.read<PlantIdCubit>().changeId(widget.plantEntity.pId);
         context
             .read<PlantDetailsCubit>()
             .fetchPlantDetails(widget.plantEntity.pId.toString());
@@ -70,15 +73,17 @@ class _ItemInGridViewState extends State<ItemInGridView> {
                             ? isPressed = false
                             : isPressed = true;
                       });
+
                       var box = Hive.box<PlantEntity>(kFavouritPlantBox);
                       if (isPressed == true) {
                         widget.plantEntity.isFavourit = true;
-                        updateIsFavourite(widget.plantEntity.pId-1, true);
+                        updateIsFavourite(widget.plantEntity.pId - 1, true);
 
-                        box.put(widget.plantEntity.pId-1, widget.plantEntity);
+                        box.put(widget.plantEntity.pId - 1, widget.plantEntity);
                       } else {
-                        updateIsFavourite(widget.plantEntity.pId-1, false);
-                        box.delete(widget.plantEntity.pId-1);
+                        widget.plantEntity.isFavourit = false;
+                        updateIsFavourite(widget.plantEntity.pId - 1, false);
+                        box.delete(widget.plantEntity.pId - 1);
                       }
                     },
                     icon: isFaverouit()),
@@ -122,11 +127,11 @@ class _ItemInGridViewState extends State<ItemInGridView> {
 void updateIsFavourite(int plantId, bool newValue) {
   var plantBox = Hive.box<PlantEntity>(kPlantBox);
 
-  if (plantBox.containsKey(plantId )) {
+  if (plantBox.containsKey(plantId)) {
     var plant = plantBox.get(plantId);
     if (plant != null) {
       plant.isFavourit = newValue;
-      plantBox.put(plantId , plant);
+      plantBox.put(plantId, plant);
     }
   }
 }

@@ -33,7 +33,6 @@ dependencies:
   cloud_firestore: ^5.6.3
   cupertino_icons: ^1.0.8
   dartz: ^0.10.1
-
   dio: ^5.8.0+1
   dotted_line: null
   firebase_auth: ^5.4.2
@@ -50,6 +49,7 @@ dependencies:
   intl: ^0.20.2
   page_transition: ^2.2.1
   shared_preferences: null
+  shimmer: ^3.0.0
   table_calendar: ^3.0.9
 dev_dependencies:
   build_runner: 2.4.13
