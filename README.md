@@ -1,5 +1,5 @@
 # flowerlly_app
- Uploading "Recording 2025-05-10 151633.mp4"
+
 A new Flutter project.
 
 ## Getting Started
