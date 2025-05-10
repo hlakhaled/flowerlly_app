@@ -9,11 +9,4 @@
 - ⭐ **Favorites**: Save your favorite plants to a personalized list for easy reference.
 - 📝 **Daily Tasks**: Set and manage daily plant care tasks like watering, fertilizing, and more.
 
-## 🚀 Getting Started
-
-To run this project locally on your machine:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/your-username/flowerlly_app.git
-   cd flowerlly_app
+ https://github.com/your-username/flowerlly_app.git
