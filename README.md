@@ -9,4 +9,4 @@
 - ⭐ **Favorites**: Save your favorite plants to a personalized list for easy reference.
 - 📝 **Daily Tasks**: Set and manage daily plant care tasks like watering, fertilizing, and more.
 
- https://github.com/your-username/flowerlly_app.git
+https://github.com/your-username/flowerlly_app.git](https://github.com/user-attachments/assets/2d5e34c4-2400-43cc-ad08-ae8caa8f9c50
